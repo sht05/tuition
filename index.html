@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuition Schedule</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f7f6;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            color: #1e3a5f;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .highlight-box {
+            background-color: #e8f4f8;
+            border: 1px solid #cce7f1;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            color: #3498db;
+            font-size: 1.2em;
+        }
+
+        .highlight-box p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        
+        .upcoming-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .upcoming-list li {
+            background-color: #f0f8ff;
+            border-left: 5px solid #3498db;
+            margin-bottom: 8px;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .class-list {
+            margin-top: 20px;
+        }
+
+        .day {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .day h3 {
+            color: #34495e;
+            margin-top: 0;
+            font-size: 1.5em;
+            border-bottom: 1px dashed #bdc3c7;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .class {
+            margin-bottom: 10px;
+            padding: 8px 0;
+        }
+
+        .class strong {
+            color: #2980b9;
+        }
+
+        .student {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h1>Final Tuition Schedule 📚</h1>
+
+    <div class="highlight-box">
+        <h3>🗓️ Next Event:</h3>
+        <p id="next-event">Loading next event...</p>
+    </div>
+
+    <div class="highlight-box">
+        <h3>🗓️ Upcoming Events:</h3>
+        <ul id="upcoming-events" class="upcoming-list">
+            <li>Loading upcoming events...</li>
+        </ul>
+    </div>
+    
+    <hr>
+
+    <div class="class-list">
+        <h2>Weekly Flow (at a glance)</h2>
+
+        <div class="day" id="Sunday">
+            <h3>Sunday</h3>
+            <div class="class">
+                <strong>5:00 PM – 7:00 PM</strong><br>
+                <span class="student">Sabit</span>
+            </div>
+        </div>
+
+        <div class="day" id="Monday">
+            <h3>Monday</h3>
+            <div class="class">
+                <strong>5:00 PM – 6:20 PM</strong><br>
+                <span class="student">Sabit</span>
+            </div>
+            <div class="class">
+                <strong>7:00 PM – 8:15 PM</strong><br>
+                <span class="student">Nafiz, Opu & Ohi</span>
+            </div>
+            <div class="class">
+                <strong>8:45 PM – 10:00 PM</strong><br>
+                <span class="student">Abid & Talha</span>
+            </div>
+        </div>
+
+        <div class="day" id="Tuesday">
+            <h3>Tuesday</h3>
+            <div class="class">
+                <strong>No classes</strong>
+            </div>
+        </div>
+        
+        <div class="day" id="Wednesday">
+            <h3>Wednesday</h3>
+            <div class="class">
+                <strong>5:00 PM – 6:20 PM</strong><br>
+                <span class="student">Sabit</span>
+            </div>
+            <div class="class">
+                <strong>7:00 PM – 8:15 PM</strong><br>
+                <span class="student">Nafiz, Opu & Ohi</span>
+            </div>
+        </div>
+
+        <div class="day" id="Thursday">
+            <h3>Thursday</h3>
+            <div class="class">
+                <strong>5:00 PM – 6:20 PM</strong><br>
+                <span class="student">Sabit</span>
+            </div>
+            <div class="class">
+                <strong>7:00 PM – 8:15 PM</strong><br>
+                <span class="student">Nafiz, Opu & Ohi</span>
+            </div>
+            <div class="class">
+                <strong>8:45 PM – 10:00 PM</strong><br>
+                <span class="student">Abid & Talha</span>
+            </div>
+        </div>
+        
+        <div class="day" id="Friday">
+            <h3>Friday</h3>
+            <div class="class">
+                <strong>No classes</strong>
+            </div>
+        </div>
+        
+        <div class="day" id="Saturday">
+            <h3>Saturday</h3>
+            <div class="class">
+                <strong>7:00 PM – 8:15 PM</strong><br>
+                <span class="student">Nafiz, Opu & Ohi</span>
+            </div>
+            <div class="class">
+                <strong>8:45 PM – 10:00 PM</strong><br>
+                <span class="student">Abid & Talha</span>
+            </div>
+        </div>
+    </div>
+    
+    <hr>
+    
+    <h2>Student Details</h2>
+    
+    <div class="student-details">
+        <h3>🧑‍🎓 Student 1 – Sabit (Class 10)</h3>
+        <p><strong>Subjects:</strong> Physics, Higher Math, Chemistry, Biology</p>
+        <p><strong>Days:</strong> 4 days per week</p>
+        <ul>
+            <li>Sunday: 5:00 PM – 7:00 PM (flexible inside 5–9 PM window)</li>
+            <li>Monday: 5:00 PM – 6:20 PM</li>
+            <li>Wednesday: 5:00 PM – 6:20 PM</li>
+            <li>Thursday: 5:00 PM – 6:20 PM</li>
+        </ul>
+        
+        <h3>👨‍🎓👨‍🎓 Student 2 Batch – Abid & Talha (Class 10)</h3>
+        <p><strong>Subjects:</strong> Physics, Higher Math, General Math</p>
+        <p><strong>Days:</strong> 3 days per week</p>
+        <ul>
+            <li>Saturday: 8:45 PM – 10:00 PM</li>
+            <li>Monday: 8:45 PM – 10:00 PM</li>
+            <li>Thursday: 8:45 PM – 10:00 PM</li>
+        </ul>
+
+        <h3>👨‍🎓👨‍🎓👨‍🎓 Student 3 Batch – Nafiz, Opu & Ohi (Class 9)</h3>
+        <p><strong>Subjects:</strong> Physics, Higher Math, General Math</p>
+        <p><strong>Days:</strong> 4 days per week</p>
+        <ul>
+            <li>Saturday: 7:00 PM – 8:15 PM</li>
+            <li>Monday: 7:00 PM – 8:15 PM</li>
+            <li>Wednesday: 7:00 PM – 8:15 PM</li>
+            <li>Thursday: 7:00 PM – 8:15 PM</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Generated Schedule by your Assistant 🤖</p>
+    </footer>
+
+    <script>
+        const schedule = [
+            { day: 'Sunday', time: '17:00', endTime: '19:00', description: 'Sabit' },
+            { day: 'Monday', time: '17:00', endTime: '18:20', description: 'Sabit' },
+            { day: 'Monday', time: '19:00', endTime: '20:15', description: 'Nafiz, Opu & Ohi' },
+            { day: 'Monday', time: '20:45', endTime: '22:00', description: 'Abid & Talha' },
+            { day: 'Wednesday', time: '17:00', endTime: '18:20', description: 'Sabit' },
+            { day: 'Wednesday', time: '19:00', endTime: '20:15', description: 'Nafiz, Opu & Ohi' },
+            { day: 'Thursday', time: '17:00', endTime: '18:20', description: 'Sabit' },
+            { day: 'Thursday', time: '19:00', endTime: '20:15', description: 'Nafiz, Opu & Ohi' },
+            { day: 'Thursday', time: '20:45', endTime: '22:00', description: 'Abid & Talha' },
+            { day: 'Saturday', time: '19:00', endTime: '20:15', description: 'Nafiz, Opu & Ohi' },
+            { day: 'Saturday', time: '20:45', endTime: '22:00', description: 'Abid & Talha' }
+        ];
+
+        const dayMap = {
+            'Sunday': 0, 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3,
+            'Thursday': 4, 'Friday': 5, 'Saturday': 6
+        };
+
+        const reverseDayMap = {
+            0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday',
+            4: 'Thursday', 5: 'Friday', 6: 'Saturday'
+        };
+
+        function formatTime(timeStr) {
+            const [hours, minutes] = timeStr.split(':');
+            const h = parseInt(hours, 10);
+            const m = parseInt(minutes, 10);
+            const period = h >= 12 ? 'PM' : 'AM';
+            const formattedHours = h % 12 === 0 ? 12 : h % 12;
+            return `${formattedHours}:${m.toString().padStart(2, '0')} ${period}`;
+        }
+
+        function getSchedule() {
+            const now = new Date();
+            const currentDay = now.getDay();
+            const currentHour = now.getHours();
+            const currentMinute = now.getMinutes();
+
+            const currentTimeInMinutes = currentHour * 60 + currentMinute;
+            
+            const sortedSchedule = [...schedule].sort((a, b) => {
+                const dayA = dayMap[a.day];
+                const dayB = dayMap[b.day];
+                const timeA = parseInt(a.time.replace(':', ''), 10);
+                const timeB = parseInt(b.time.replace(':', ''), 10);
+
+                if (dayA !== dayB) {
+                    return (dayA - currentDay + 7) % 7 - (dayB - currentDay + 7) % 7;
+                }
+                return timeA - timeB;
+            });
+
+            let nextEvent = null;
+            let upcomingEvents = [];
+            
+            for (let i = 0; i < sortedSchedule.length; i++) {
+                const event = sortedSchedule[i];
+                const eventDay = dayMap[event.day];
+                const [eventHour, eventMinute] = event.time.split(':').map(Number);
+                const eventTimeInMinutes = eventHour * 60 + eventMinute;
+                
+                const dayDiff = (eventDay - currentDay + 7) % 7;
+                
+                if (dayDiff === 0 && eventTimeInMinutes > currentTimeInMinutes) {
+                    if (!nextEvent) {
+                        nextEvent = event;
+                    }
+                    upcomingEvents.push(event);
+                } else if (dayDiff > 0) {
+                    if (!nextEvent) {
+                        nextEvent = event;
+                    }
+                    upcomingEvents.push(event);
+                }
+            }
+
+            // Handle the case where the next event is in the current week but the search wrapped around
+            if (!nextEvent && sortedSchedule.length > 0) {
+                nextEvent = sortedSchedule[0];
+                upcomingEvents = sortedSchedule;
+            }
+
+            document.getElementById('next-event').innerText = nextEvent 
+                ? `${nextEvent.day}: ${formatTime(nextEvent.time)} – ${formatTime(nextEvent.endTime)} (${nextEvent.description})`
+                : 'No more events this week.';
+
+            const upcomingList = document.getElementById('upcoming-events');
+            upcomingList.innerHTML = '';
+            
+            // Limit upcoming events to a reasonable number, e.g., next 5
+            upcomingEvents.slice(0, 5).forEach(event => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${event.day}:</strong> ${formatTime(event.time)} – ${formatTime(event.endTime)} (${event.description})`;
+                upcomingList.appendChild(li);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', getSchedule);
+    </script>
+</body>
+  </html>
